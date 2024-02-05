@@ -1,13 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
+project(CmanProject VERSION 1.0 LANGUAGES CXX)
 
-# Set the project name and version
-project(CmanProject VERSION 1.0)
-
-# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB SOURCES
-     src/*.cpp
-)
-add_executable(CmanDemo ${SOURCES})
+add_executable(CmanDemo src/main.cpp src/complex/complex.cpp)
+target_include_directories(CmanDemo PRIVATE src)

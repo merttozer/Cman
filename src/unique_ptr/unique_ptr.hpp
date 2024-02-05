@@ -1,8 +1,8 @@
 /**
- * @file    server_manager.hpp
- * @brief   This file contains the declaration of the ServerManager class.
+ * @file    unique_ptr.hpp
+ * @brief   This file contains the declaration of the unique_ptr class.
  * @author  Mert Ozer
- * @date    26.11.2023
+ * @date    15.01.2024
  * @version 1.0
  */
 #ifndef UNIQUE_PTR_HPP

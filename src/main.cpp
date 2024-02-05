@@ -1,9 +1,17 @@
 #include<iostream>
 #include"unique_ptr/unique_ptr.hpp"
-using namespace std;
+#include"complex/complex.hpp"
 
 int main() {
+
+    //--------------COMPLEX----------------    
+    mozer::Complex c1(3, 4);
+    mozer::Complex c2(2, 6);
+
+    mozer::Complex c3 = c1 + c2;
+    std::cout << c3 << "\n";
     
+    //--------------UNIQUE_PTR----------------    
     mozer::unique_ptr<int> ptr1(new int(10));
     std::cout << "ptr1: " << *ptr1 << std::endl;
 
