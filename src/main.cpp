@@ -1,16 +1,24 @@
 #include<iostream>
 #include"unique_ptr/unique_ptr.hpp"
 #include"complex/complex.hpp"
+#include"vector/vector.hpp"
 
 int main() {
 
+    //--------------VECTOR----------------
+    mozer::vector<int> v1(5, 10);
+    v1.push_back(20);
+    v1.push_back(30);
+    v1.push_back(40);
+    std::cout << "v1: " << v1 << std::endl;
+    
     //--------------COMPLEX----------------    
     mozer::Complex c1(3, 4);
     mozer::Complex c2(2, 6);
 
     mozer::Complex c3 = c1 + c2;
     std::cout << c3 << "\n";
-    
+
     //--------------UNIQUE_PTR----------------    
     mozer::unique_ptr<int> ptr1(new int(10));
     std::cout << "ptr1: " << *ptr1 << std::endl;
