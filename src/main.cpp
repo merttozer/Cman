@@ -3,45 +3,67 @@
 #include"complex/complex.hpp"
 #include"vector/vector.hpp"
 #include"shared_ptr/shared_ptr.hpp"
+#include"string/string.hpp"
 
 int main() {
 
-    //--------------SHARED_PTR----------------    
-    mozer::shared_ptr<int> sp1(new int(10));
-    std::cout << "sp1 value: " << *sp1 << std::endl;
+    try{
+        //--------------STRING----------------    
+        mozer::String myString("Hello, World!");
 
-    mozer::shared_ptr<int> sp2 = sp1;
-    std::cout << "sp2 value: " << *sp2 << std::endl;
+        std::cout << "Original string: " << myString.c_str() << std::endl;
 
-    mozer::shared_ptr<double> sp3(new double(2.4));
+        myString[7] = 'W';
+        myString[8] = 'o';
+        myString[9] = 'r';
+        myString[10] = 'l';
+        myString[11] = 'd';
 
-    mozer::shared_ptr<double> sp4 = sp3;
+        std::cout << "Modified string: " << myString.c_str() << std::endl;
+        std::cout << "Character at index 6: " << myString[6] << std::endl;
+        std::cout << "Accessing out-of-range character: " << myString[20] << std::endl;
 
-    //--------------VECTOR----------------
-    mozer::vector<int> v1(5, 10);
-    v1.push_back(20);
-    v1.push_back(30);
-    v1.push_back(40);
-    std::cout << "v1: " << v1 << std::endl;
-    
-    //--------------COMPLEX----------------    
-    mozer::Complex c1(3, 4);
-    mozer::Complex c2(2, 6);
+        //--------------SHARED_PTR----------------    
+        mozer::shared_ptr<int> sp1(new int(10));
+        std::cout << "sp1 value: " << *sp1 << std::endl;
 
-    mozer::Complex c3 = c1 + c2;
-    std::cout << c3 << "\n";
+        mozer::shared_ptr<int> sp2 = sp1;
+        std::cout << "sp2 value: " << *sp2 << std::endl;
 
-    //--------------UNIQUE_PTR----------------    
-    mozer::unique_ptr<int> ptr1(new int(10));
-    std::cout << "ptr1: " << *ptr1 << std::endl;
+        mozer::shared_ptr<double> sp3(new double(2.4));
 
-    mozer::unique_ptr<int> ptr2 = std::move(ptr1); // Transfer ownership
-    std::cout << "ptr2: " << *ptr2 << std::endl;
+        mozer::shared_ptr<double> sp4 = sp3;
 
-    // ptr1 is now empty
-    if (!ptr1.get()) {
-        std::cout << "ptr1 is now empty" << std::endl;
+        //--------------VECTOR----------------
+        mozer::vector<int> v1(5, 10);
+        v1.push_back(20);
+        v1.push_back(30);
+        v1.push_back(40);
+        std::cout << "v1: " << v1 << std::endl;
+        
+        //--------------COMPLEX----------------    
+        mozer::Complex c1(3, 4);
+        mozer::Complex c2(2, 6);
+
+        mozer::Complex c3 = c1 + c2;
+        std::cout << c3 << "\n";
+
+        //--------------UNIQUE_PTR----------------    
+        mozer::unique_ptr<int> ptr1(new int(10));
+        std::cout << "ptr1: " << *ptr1 << std::endl;
+
+        mozer::unique_ptr<int> ptr2 = std::move(ptr1); // Transfer ownership
+        std::cout << "ptr2: " << *ptr2 << std::endl;
+
+        // ptr1 is now empty
+        if (!ptr1.get()) {
+            std::cout << "ptr1 is now empty" << std::endl;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
+
+    std::cout << "Finished succesfully." << std::endl;
 
     return 0;
 }
