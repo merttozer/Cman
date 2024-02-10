@@ -2,8 +2,20 @@
 #include"unique_ptr/unique_ptr.hpp"
 #include"complex/complex.hpp"
 #include"vector/vector.hpp"
+#include"shared_ptr/shared_ptr.hpp"
 
 int main() {
+
+    //--------------SHARED_PTR----------------    
+    mozer::shared_ptr<int> sp1(new int(10));
+    std::cout << "sp1 value: " << *sp1 << std::endl;
+
+    mozer::shared_ptr<int> sp2 = sp1;
+    std::cout << "sp2 value: " << *sp2 << std::endl;
+
+    mozer::shared_ptr<double> sp3(new double(2.4));
+
+    mozer::shared_ptr<double> sp4 = sp3;
 
     //--------------VECTOR----------------
     mozer::vector<int> v1(5, 10);
