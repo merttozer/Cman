@@ -4,10 +4,23 @@
 #include"vector/vector.hpp"
 #include"shared_ptr/shared_ptr.hpp"
 #include"string/string.hpp"
+#include"bitset/bitset.hpp"
 
 int main() {
 
     try{
+        mozer::Bitset myBitset(10);
+        myBitset.setBit(2);
+        myBitset.setBit(5);
+        std::cout << "Bit at position 2 is: " << (myBitset.testBit(2) ? "set" : "not set") << std::endl;
+        std::cout << "Bit at position 3 is: " << (myBitset.testBit(3) ? "set" : "not set") << std::endl;
+
+        myBitset.clearBit(2);
+        std::cout << "Bit at position 2 after clearing is: " << (myBitset.testBit(2) ? "set" : "not set") << std::endl;
+
+        myBitset.flipBit(5);
+        std::cout << "Bit at position 5 after flipping is: " << (myBitset.testBit(5) ? "set" : "not set") << std::endl;
+
         //--------------STRING----------------    
         mozer::String myString("Hello, World!");
 
@@ -21,7 +34,6 @@ int main() {
 
         std::cout << "Modified string: " << myString.c_str() << std::endl;
         std::cout << "Character at index 6: " << myString[6] << std::endl;
-        std::cout << "Accessing out-of-range character: " << myString[20] << std::endl;
 
         //--------------SHARED_PTR----------------    
         mozer::shared_ptr<int> sp1(new int(10));
@@ -59,11 +71,11 @@ int main() {
         if (!ptr1.get()) {
             std::cout << "ptr1 is now empty" << std::endl;
         }
+        std::cout << "Finished succesfully." << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
+        std::cout << "Finished with error!" << std::endl;
     }
-
-    std::cout << "Finished succesfully." << std::endl;
 
     return 0;
 }
