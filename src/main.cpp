@@ -5,10 +5,20 @@
 #include"shared_ptr/shared_ptr.hpp"
 #include"string/string.hpp"
 #include"bitset/bitset.hpp"
+#include"allocator/allocator.hpp"
 
 int main() {
 
     try{
+        //-------------ALLOCATOR--------------  
+        mozer::Allocator allocator(1024);
+        void* allocatedMemory = allocator.allocate(256);
+        if (allocatedMemory) {
+            std::cout << "Memory allocated successfully." << std::endl;
+            allocator.deallocate(allocatedMemory); // Deallocate memory
+            std::cout << "Memory deallocated successfully." << std::endl;
+        }
+        //--------------BITSET----------------    
         mozer::Bitset myBitset(10);
         myBitset.setBit(2);
         myBitset.setBit(5);
