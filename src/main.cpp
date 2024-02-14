@@ -98,10 +98,4 @@ int main() {
 5) Unions and pointers and c-style strings - implement string with small string optimization
 6) Bit operations - implement bitset
 7) Memory allocation strategies - implement allocator
-8) Template metaprogramming - implement tuple
-9) Algorithms - implement sort
-10) Multithreading, concurrency, locks, condition variables - implement future and async
-11) Exceptions - discuss the various exception safety guarantees and how to fulfill them when implementing the above features.
-12) Cache friendly structures - have student use/measure std::map and std::unordered_map. Implement map as a sorted array. 
-    Implement unordered_map using various hashing strategies - measure performance and discuss tradeoffs.
 */
