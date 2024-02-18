@@ -34,7 +34,6 @@ public:
         }
     }
 
-
     // Copy constructor: Initializes a vector with a copy of each of the elements in another vector
     vector(const vector& other) : m_ptr(new T[other.m_size]) {
         for (size_t i = 0; i < other.m_size; i++) {
